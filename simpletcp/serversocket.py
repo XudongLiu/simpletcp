@@ -26,7 +26,8 @@ class ServerSocket:
             print("port must be an int", file=sys.stderr)
             raise ValueError
         # Actually create an INET, STREAMing socket.socket.
-        self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self._socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         # Make it non-blocking.
         self._socket.setblocking(0)
         # Bind the socket, so it can listen.
